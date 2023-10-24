@@ -34,112 +34,79 @@ typeEffect();
 
 //************** MY ABOUT-ME EVENT ***************/
 
-const aboutMe = document.querySelector('.about-me')
+const observer = new IntersectionObserver((entries) => {
 
-
-window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-
-    if (scrollY <= 500) {
-        aboutMe.style.opacity = '0'
-        aboutMe.style.left = "-150px"
-
-    } else {
-        aboutMe.style.opacity = '1'
-        aboutMe.style.left = "0"
-    }
-});
-
-
-window.addEventListener('scroll', () => {
-    console.log(window.scrollY)
+    let entry = entries[0]
+        if (entry.isIntersecting) {
+            entry.target.animate([
+                {transform:'translateX(-50px)', opacity: 0},
+                {transform:'translateX(0px)', opacity: 1},
+            ], {
+                duration: 300
+            })
+        }
 })
+
+
+observer.observe(document.querySelector('.about-me-description'))
+observer.observe(document.querySelector('.about-me-my-skills'))
+
 
 
 //************** MY PROJECT EVENT ***************/
 
-let element = document.querySelector(".myprojects");
-let project1 = document.querySelector('.myprojects-container:first-child');
-let project2 = document.querySelector('.myprojects-container:last-child');
-let title = document.querySelector('.myprojects h2')
-
-
-window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-
-    if (scrollY <= 1400) {
-        element.style.background = '#f5f5f5';
-        project1.style.left = "-1500px";
-        project2.style.left = "1500px";
-        project1.style.opacity = "0";
-        project2.style.opacity = "0";
-        title.style.opacity = "0"
-
-    } else {
-        element.style.background = '#eebb55';
-        project1.style.left = "0";
-        project2.style.left = "0";
-        project1.style.opacity = "1";
-        project2.style.opacity = "1";
-        title.style.opacity= "1"
+const observeProject1 = new IntersectionObserver((entries) => {
+    for(const entry of entries) {
+        if (entry.isIntersecting) {
+            entry.target.animate([
+                {transform:'translateX(-100px)', opacity: 0},
+                {transform:'translateX(0px)', opacity: 1},
+            ], {
+                duration: 500
+            })
+        }
     }
-});
+})
+observeProject1.observe(document.querySelector('.myprojects-container:first-child'))
+
+
+const observeProject2 = new IntersectionObserver((entries) => {
+    for(const entry of entries) {
+        if (entry.isIntersecting) {
+            entry.target.animate([
+                {transform:'translateX(100px)', opacity: 0},
+                {transform:'translateX(0px)', opacity: 1},
+            ], {
+                duration: 300
+            })
+            //observer.unobserve(entry.target)
+        }
+    }
+})
+observeProject2.observe(document.querySelector('.myprojects-container:last-child'))
 
 
 //************** MY CONTACT EVENT ***************/
 
-let firstName = document.getElementById('fname')
-let LastName = document.getElementById('lname')
-let email = document.getElementById('email')
-let phone = document.getElementById('phone')
-let message = document.getElementById('message')
-let submit = document.getElementById('submit')
 
-
-window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-
-    if (scrollY <= 2600) {
-        firstName.style.right = "-1700px";
-
-    } else {
-        firstName.style.right = "0";
+const observerContact = new IntersectionObserver((entries) => {
+    for(const entry of entries) {
+        if (entry.isIntersecting) {
+            entry.target.animate([
+                {transform:'translateX(-300px)', opacity: 0},
+                {transform:'translateX(0px)', opacity: 1},
+            ], {
+                duration: 500
+            })
+        }
     }
-
-    if (scrollY <= 2650) {
-        LastName.style.right = "-3700px";
-    } else {
-        LastName.style.right = "0";
-    }
-
-    if (scrollY <= 2700) {
-        email.style.right = "-5700px";
-
-    } else {
-        email.style.right = "0";
-    }
+})
 
 
-    if (scrollY <= 2750) {
-        phone.style.right = "-7700px";
-
-    } else {
-        phone.style.right = "0";
-    }
-
-
-    if (scrollY <= 2800) {
-        message.style.right = "-9700px";
-
-    } else {
-        message.style.right = "0";
-    }
-
-
-    if (scrollY <= 2850) {
-        submit.style.right = "-11000px";
-
-    } else {
-        submit.style.right = "0";
-    }
-});
+observerContact.observe(document.getElementById('fname'))
+observerContact.observe(document.getElementById('lname'))
+observerContact.observe(document.getElementById('entreprise'))
+observerContact.observe(document.getElementById('email'))
+observerContact.observe(document.getElementById('phone'))
+observerContact.observe(document.getElementById('message'))
+observerContact.observe(document.getElementById('submit'))
