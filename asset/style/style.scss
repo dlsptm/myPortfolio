@@ -1,0 +1,409 @@
+@mixin flexTheme{
+  display: flex;
+  align-items: center;
+}
+
+$white: #f5f5f5;
+$black: rgb(6, 6, 6);
+$main: #302a77;
+$second:#eebb55;
+$third:#5457a6;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Autour+One&family=Roboto+Mono:wght@400;500&display=swap');
+
+
+
+* {
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+list-style: none;
+font-family: 'Roboto';
+scroll-behavior: smooth;
+overflow-x: hidden;
+}
+
+body {
+background: $white;
+color: $black;
+width: 100%;
+
+a {
+  color: $white;
+  text-decoration: none;
+}
+
+nav {
+display: grid;
+background: #00000098;
+color: $white;
+font-weight: bold;
+backdrop-filter: blur(2px);
+grid-template-columns: 50% 50%;
+justify-content: center;
+width: 100%;
+height: 60px;
+position: fixed;
+top: 0;
+border-bottom: $second 1px solid;
+z-index: 1;
+
+h1 {
+  margin: auto 50px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 400;
+  
+  span {
+    color: $second;
+    font-weight: bold;
+  }
+}
+
+ul {
+  @include flexTheme();
+  justify-content: space-around;
+  width: 100%;
+
+  li {
+    text-transform: uppercase;
+    transition: all 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-20%)
+    }
+  }
+}
+}
+
+header {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: url(../img/10740017520_IMG_9191.JPG) center no-repeat;
+
+
+  div {
+    background: rgba(0, 0, 0, 0.387);
+    height: 100vh;
+    width: 100%;
+
+    @include flexTheme();
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  
+  h3, .auto-type {
+    color: $white;
+    margin: 10px;
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+
+
+  
+  h2 {
+    font-size: 8rem;
+    color: $second;
+    text-shadow: 1px 1px 5px $second;
+    letter-spacing: 5px;
+    }
+    
+    a {
+      background: rgba(0, 0, 0, 0.341);
+      backdrop-filter: blur(100%);
+      border: 2px solid $white;
+      padding: 10px 50px;
+      margin-top: 20px;
+      border-radius: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      transition: all 0.5s;
+
+      &:hover {
+        background: $white;
+        color: $main;
+      }
+    }
+    }
+  }
+
+.about-me {
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px 50px;
+  transition: all 2s;
+
+  h3 {
+    margin: 10px 50px;
+    font-size: 2rem;
+
+    span {
+      color: $third;
+      text-transform: uppercase;
+    }
+}
+
+  p {
+    line-height: 25px;
+  }
+
+  h4 {
+    color: $third;
+    margin: 25px 0;
+  }
+
+  ul  {
+  @include flexTheme();
+  justify-content: space-around;
+
+  li img {
+    filter: grayscale(1);
+      transition: all 0.5s;
+
+    &:hover{
+      filter: grayscale(0);
+    }
+  }
+}
+
+.projectmanagement {
+
+  li {
+  background: $second;
+  width: 150px;
+  height: 50px;
+  padding: 12px;
+  text-align: center;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+li:nth-child(even) {
+    color: $white;
+    background: $third;
+  }
+
+  }
+}
+
+.myprojects {
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px 50px;
+  background: $second;
+  transition: all 0.15s;
+
+  h2 {
+    margin: 10px 50px 40px 50px;
+    font-size: 2rem;
+    transition: all 0.5s;
+
+    span {
+      text-transform: uppercase;
+      color: $white
+    }
+  
+}
+
+
+  .myprojects-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 40px;
+
+
+
+    .project {
+      display: flex;
+      background: $white;
+      margin: 20px;
+      padding: 30px 20px 10px 20px;
+      border-radius: 20px;
+      transition: all 0.5s;
+
+      &:hover {
+        transform: translateY(-10px);
+      }
+
+      img {
+        width: 80%;
+        transition: all 0.3s;
+
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+
+    .project-description {
+      margin: 10px;
+
+      h3 {
+        margin: 10px 0;
+        font-size: 1.2rem;
+      }
+
+      p {
+        line-height: 25px;
+        font-size: 0.9rem;
+      }
+      
+      ul {
+        @include flexTheme();
+        justify-content: space-between;
+        margin: 10px 0;
+
+        li {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+  }
+
+  .myprojects-container:first-child {
+    transition: all 2s ease-out;
+  }
+  .myprojects-container:last-child {
+    transition: all 2s ease-out;
+  }
+
+.contactme {
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px 50px 50px 50px;
+
+    h2 {
+      margin: 10px 50px;
+      font-size: 2rem;
+
+      span {
+        text-transform: uppercase;
+        color: $third;
+      }
+    }
+
+    form {
+    @include flexTheme();
+    justify-content: center;
+    flex-direction: column;
+    margin: 40px 0 0px 0;
+    padding: 10px;
+    gap: 25px;
+
+    input, textarea {
+      padding: 20px 10px;
+      border-radius: 10px;
+      border: none;
+      resize: none;
+      width: 70%;
+      color: $main;
+      position:relative;
+      transition: all 0.3s;
+
+      &:hover {
+        outline: 2px solid $third;
+        }
+      }
+
+      input[type="submit"] {
+        background: $main;
+        padding: 20px;
+        color: $white;
+        cursor: pointer;
+        transition: all 0.3s;
+
+
+        &:hover {
+          background: none;
+          color: $main;
+        }
+      }
+    }
+    }
+
+footer {
+  background: $main;
+  color: $white;
+  padding: 30px 50px 30px 50px;
+  position: relative;
+
+  h3{
+    font-size: 2rem;
+
+      span {
+        color: $second;
+        text-transform: uppercase;
+      }
+  }
+
+  ul {
+    @include flexTheme();
+    justify-content: center;
+
+    li {
+      margin: 0 50px;
+      transition: all 0.5s;
+      font-size: 1.2rem;
+
+      &:hover {
+        transform: scale(1.5);
+      }
+    }
+  }
+}
+}
+
+
+@media only screen and (max-width: 800px) {
+  nav {
+    visibility: hidden;
+  }
+
+  header {
+    #backward {
+      h2 {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  .about-me {
+    
+      ul  {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+  }
+
+.myprojects-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%; 
+  margin: 0;
+
+  .project {
+      flex-direction: column;
+      margin: 0 20px;
+    }
+
+}
+
+footer {
+  ul {
+    flex-direction: column;
+    
+    li {
+      margin: 9px;
+    }
+  }
+}
+
+}
