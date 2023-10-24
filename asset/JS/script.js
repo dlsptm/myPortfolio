@@ -105,6 +105,7 @@ const observerContact = new IntersectionObserver((entries) => {
 
 observerContact.observe(document.getElementById('fname'))
 observerContact.observe(document.getElementById('lname'))
+observerContact.observe(document.getElementById('entreprise'))
 observerContact.observe(document.getElementById('email'))
 observerContact.observe(document.getElementById('phone'))
 observerContact.observe(document.getElementById('message'))
