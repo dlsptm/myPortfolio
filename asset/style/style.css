@@ -438,6 +438,15 @@ body footer ul li:hover {
             flex-direction: column;
     margin: 0 20px;
   }
+  .myprojects-container .project .wholeproject {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
   footer ul {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
