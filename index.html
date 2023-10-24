@@ -10,6 +10,10 @@
   <script src="./asset/JS/script.js" defer></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;500;800&family=Roboto+Slab:wght@600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -84,7 +88,8 @@
   <div class="myproject-display">
     <div class="myprojects-container">
         <div class="project">
-          <a href="https://dlsptm.github.io/ASimpleCalculator/" target="_blank"><img src="./asset/img/mySimpleCalculator.png" alt="Projet : Une Simple Calculatrice"></a>
+          <div class="wholeproject">
+          <img src="./asset/img/mySimpleCalculator.png" alt="Projet : Une Simple Calculatrice">
           <div class="project-description">
             <h3>Une Simple Calculatrice</h3>
             <p>small description Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, sapiente.</p>
@@ -95,8 +100,15 @@
             </ul>
           </div>
         </div>
+        <div class="projectlinks">
+          <a href="https://dlsptm.github.io/ASimpleCalculator/" target="_blank"><i class="fa-solid fa-link"></i></a>
+          <a href="https://github.com/dlsptm/ASimpleCalculator" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
         <div class="project">
-          <a href="https://dlsptm.github.io/myPasswordGenerator/" target="_blank"><img src="./asset/img/myPasswordGenerator.png" alt="Projet : Générateur de mot de passe"></a>
+          <div class="wholeproject">
+          <img src="./asset/img/myPasswordGenerator.png" alt="Projet : Générateur de mot de passe">
           <div class="project-description">
             <h3>Générateur de mot de passe</h3>
             <p>small description Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, sapiente.</p>
@@ -107,11 +119,17 @@
             </ul>
           </div>
         </div>
+        <div class="projectlinks">
+          <a href="https://dlsptm.github.io/myPasswordGenerator/" target="_blank"><i class="fa-solid fa-link"></i></a>
+          <a href="https://github.com/dlsptm/myPasswordGenerator" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
     </div>
     
     <div class="myprojects-container">
         <div class="project">
-          <a href="https://dlsptm.github.io/myGradientGenerator/" target="_blank"><img src="./asset/img/myGrandiantGenerator.png" alt="Projet : Générateur de couleur"></a>
+          <div class="wholeproject">
+          <img src="./asset/img/myGrandiantGenerator.png" alt="Projet : Générateur de couleur">
           <div class="project-description">
             <h3>Générateur de couleur</h3>
             <p>small description Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, sapiente.</p>
@@ -122,9 +140,15 @@
             </ul>
           </div>
         </div>
+        <div class="projectlinks">
+          <a href="https://dlsptm.github.io/myGradientGenerator/" target="_blank"><i class="fa-solid fa-link"></i></a>
+          <a href="https://github.com/dlsptm/myGradientGenerator" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
 
         <div class="project">
-          <a href="https://dlsptm.github.io/myPasswordGenerator/" target="_blank"><img src="./asset/img/myPasswordGenerator.png" alt="Projet : Générateur de mot de passe"></a>
+          <div class="wholeproject">
+          <img src="./asset/img/myPasswordGenerator.png" alt="Projet : Générateur de mot de passe">
           <div class="project-description">
             <h3>Générateur de mot de passe</h3>
             <p>small description Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, sapiente.</p>
@@ -134,6 +158,11 @@
               <li><i class="fa-brands fa-square-js"></i></li>
             </ul>
           </div>
+        </div>
+        <div class="projectlinks">
+          <a href="https://dlsptm.github.io/myPasswordGenerator/" target="_blank"><i class="fa-solid fa-link"></i></a>
+          <a href="https://github.com/dlsptm/myPasswordGenerator" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
         </div>
     </div>
 
@@ -149,6 +178,8 @@
       <input type="text" id="fname" name="firstname" placeholder="Prénom" required>
   
       <input type="text" id="lname" name="lastname" placeholder="Nom" required>
+
+      <input type="text" id="entreprise" name="entreprise" placeholder="Votre entreprise">
   
       <input type="email" id="email" name="email" placeholder="Adresse email" required>
 
